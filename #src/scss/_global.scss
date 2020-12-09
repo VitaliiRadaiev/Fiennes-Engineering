@@ -992,6 +992,7 @@ a {
 		max-width: 58.5rem;
 		font-weight: 700;
 		text-transform: uppercase;
+		color: $mainColor;
 
 		@media (max-width: $md3+px) {
 			margin-bottom: 1rem;
