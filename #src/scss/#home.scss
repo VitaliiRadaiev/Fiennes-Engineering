@@ -596,9 +596,32 @@
 // == slider text ======================================================================
 
 .slider-text {
-	background-color: rgba(51, 51, 51, 0.4);
+	//background-color: rgba(51, 51, 51, 0.4);
+	position: relative;
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+
+		
+
+		&:before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(51, 51, 51, 0.4);
+			z-index: 2;
+		}
+	}
 
 	&__content {
+		position: relative;
 		min-height: 600px;
 		display: flex;
 		flex-direction: column;
@@ -608,6 +631,7 @@
 		padding: 100px 15px 200px;
 		max-width: 1090px;
 		margin: 0 auto;
+		z-index: 2;
 
 		@media (max-width: $md3+px) {
 			padding: 50px 15px 100px;
@@ -716,6 +740,7 @@
 		}
 	}
 }
+
 
 
 // == and slider text ======================================================================

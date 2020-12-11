@@ -4003,10 +4003,31 @@ textarea.input {
 }
 
 .slider-text {
+  position: relative;
+}
+
+.slider-text__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slider-text__bg:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(51, 51, 51, 0.4);
+  z-index: 2;
 }
 
 .slider-text__content {
+  position: relative;
   min-height: 600px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4025,6 +4046,7 @@ textarea.input {
   padding: 100px 15px 200px;
   max-width: 1090px;
   margin: 0 auto;
+  z-index: 2;
 }
 
 .slider-text__text {
