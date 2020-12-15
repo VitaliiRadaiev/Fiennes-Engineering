@@ -385,7 +385,7 @@
 
 				&.swiper-pagination-bullet-active {
 					& > .progress {
-						 animation: dash 8.1s linear forwards;
+						 animation: dash 4.1s linear forwards;
 					}
 				}
 			}
@@ -944,13 +944,15 @@
 		}
 
 		& .btn-default {
-			transition: all .8s linear .9s;
+			transition: opacity .8s linear .9s;
 			opacity: 0;
 		}
 
 		& .video-block__play-pause {
-			transition: all .8s linear 1.4s;
-			opacity: 0;
+			& .icon-play3 {
+				transition: all .8s linear 1.4s;
+				opacity: 0;				
+			}
 		}
 
 		&._active {
@@ -975,7 +977,9 @@
 			}
 
 			& .video-block__play-pause {
-				opacity: 1;
+				& .icon-play3 {
+					opacity: 1;				
+				}
 			}
 		}
 	}
