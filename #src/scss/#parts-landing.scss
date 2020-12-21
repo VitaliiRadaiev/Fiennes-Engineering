@@ -6,8 +6,16 @@
     &__hero {
 		& .simple-hero__title {
 			max-width: 837px;
-		}
-	}
+        }
+        
+    }
+    
+    & .video-text-block {
+        & .video-text-block__inner {
+            min-height: 260px;
+            padding-bottom: 1px;
+        }
+    }
 
 	&__text-block {
 		margin: 15.3rem 0 15.3rem;

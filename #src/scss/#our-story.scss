@@ -176,10 +176,6 @@
 
 		& .text-block__title {
 			max-width: 56.2rem;
-		}	
-
-		& .text-block__text {
-			max-width: 56.2rem;
 		}
 	}
 	&__body {}
@@ -188,13 +184,23 @@
 		flex-wrap: wrap;
 
 		& > li {
-			flex: 0 1 50%;
-			padding: 0 4rem;
-			margin-bottom: 18rem;
+			flex: 0 1 25%;
+			padding: 0 6rem;
+			margin-bottom: 13rem;
+
+			@media (max-width: $md2+px) {
+				padding: 0 4rem;
+			}
 
 			@media (max-width: $md3+px) {
-				flex: 0 1 100%;
-				margin-bottom: 12rem;
+				flex: 0 1 33.333%;
+				margin-bottom: 9rem;
+				
+			}
+
+			@media (max-width: 575px) {
+				flex: 0 1 50%;
+				padding: 0 2rem;
 			}
 		}
 	}
@@ -205,11 +211,7 @@
 	}
 	&__logo {
 		max-width: 31.2rem;
-		margin: 0 auto 13rem;
-
-		@media (max-width: $md3+px) {
-			margin-bottom: 7rem;
-		}
+		margin: 0 auto 0rem;
 	}
 	&__btn-wrap {}
 }
