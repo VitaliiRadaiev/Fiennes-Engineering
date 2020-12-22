@@ -1,4 +1,72 @@
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
+if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = function (callback, thisArg) {
+        thisArg = thisArg || window;
+        for (var i = 0; i < this.length; i++) {
+            callback.call(thisArg, this[i], i, this);
+        }
+    };
+}
+Number.isNaN = Number.isNaN || function(value) {
+	return typeof value === 'number' && isNaN(value);
+  }
+  if (!String.prototype.repeat) {
+	String.prototype.repeat = function(count) {
+	  'use strict';
+	  if (this == null) {
+		throw new TypeError('can\'t convert ' + this + ' to object');
+	  }
+	  var str = '' + this;
+	  count = +count;
+	  if (count != count) {
+		count = 0;
+	  }
+	  if (count < 0) {
+		throw new RangeError('repeat count must be non-negative');
+	  }
+	  if (count == Infinity) {
+		throw new RangeError('repeat count must be less than infinity');
+	  }
+	  count = Math.floor(count);
+	  if (str.length == 0 || count == 0) {
+		return '';
+	  }
+	  // Обеспечение того, что count является 31-битным целым числом, позволяет нам значительно
+	  // соптимизировать главную часть функции. Впрочем, большинство современных (на август
+	  // 2014 года) браузеров не обрабатывают строки, длиннее 1 << 28 символов, так что:
+	  if (str.length * count >= 1 << 28) {
+		throw new RangeError('repeat count must not overflow maximum string size');
+	  }
+	  var rpt = '';
+	  for (var i = 0; i < count; i++) {
+		rpt += str;
+	  }
+	  return rpt;
+	}
+  }
+
+function get_name_browser(){
+	var ua = navigator.userAgent;
+	if (ua.search(/YaBrowser/) > 0) return 'Яндекс Браузер';
+	if (ua.search(/rv:11.0/) > 0) return 'Internet Explorer 11';
+	if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
+	if (ua.search(/Edge/) > 0) return 'Edge';
+	if (ua.search(/Chrome/) > 0) return 'Google Chrome';
+	if (ua.search(/Firefox/) > 0) return 'Firefox';
+	if (ua.search(/Opera/) > 0) return 'Opera';
+	if (ua.search(/Safari/) > 0) return 'Safari';
+	return 'Не определен';
+	}
+
+var browser = get_name_browser();
+if (browser == 'Edge'||'Internet Explorer') {
+	let videos = document.querySelectorAll('.video-block');
+	if(videos.length>0) {
+		videos.forEach(item => {
+			item.classList.add('objectFitVideoPoly');
+		})
+	}
+} 
 
 //SlideToggle
 let _slideUp = (target, duration = 500) => {
@@ -114,6 +182,7 @@ $(document).ready(function() {
 	@@include('popup.js');
 	@@include('burger.js');
 	@@include('scroll-anim.js'); 
+	@@include('object-fit-videos.min.js'); 
 
 // === Проверка, поддержка браузером формата webp ==================================================================
 
@@ -201,6 +270,8 @@ if(block.length>0){
 // === text-content animation ==================================================================
 
 
+
+objectFitVideos();
 });
 
 // === GOOGLE MAP ==================================================================

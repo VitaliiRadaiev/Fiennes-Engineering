@@ -4207,6 +4207,20 @@ textarea.input {
   background: #fff;
 }
 
+.video-block.objectFitVideoPoly {
+  -o-object-fit: cover;
+     object-fit: cover;
+  font-family: 'object-fit: cover;';
+}
+
+.video-block-2 {
+  margin: 17rem 0 17rem;
+}
+
+.video-block-2 .icon-play3:after {
+  display: none;
+}
+
 .video-block__body {
   position: relative;
   height: 80vh;
@@ -8062,6 +8076,10 @@ textarea.input {
     bottom: 5.5rem;
   }
 
+  .video-block-2 {
+    margin: 14rem 0 14rem;
+  }
+
   .video-block__body {
     height: 60vh;
   }
@@ -8836,6 +8854,10 @@ textarea.input {
 
   .slider-text__text {
     font-size: 1.8rem;
+  }
+
+  .video-block-2 {
+    margin: 10rem 0 10rem;
   }
 
   .slider-2__img {

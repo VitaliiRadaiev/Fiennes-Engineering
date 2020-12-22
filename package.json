@@ -6,10 +6,13 @@
 	"private": true,
 	"license": "GNU General Public License (GPL)",
 	"devDependencies": {
+		"@babel/core": "^7.12.10",
+		"@babel/preset-env": "^7.12.11",
 		"browser-sync": "latest",
 		"del": "latest",
 		"gulp": "latest",
 		"gulp-autoprefixer": "latest",
+		"gulp-babel": "^8.0.0",
 		"gulp-clean-css": "latest",
 		"gulp-file-include": "latest",
 		"gulp-fonter": "latest",
@@ -29,5 +32,10 @@
 		"gulp-webp-html": "latest",
 		"imagemin-webp": "latest",
 		"transform-runtime": "0.0.0"
+	},
+	"dependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.3",
+		"babel-preset-es2015": "^6.24.1"
 	}
 }

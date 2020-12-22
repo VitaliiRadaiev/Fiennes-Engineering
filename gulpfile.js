@@ -14,7 +14,7 @@ let rename = require("gulp-rename");
 let fileinclude = require("gulp-file-include");
 let clean_css = require("gulp-clean-css");
 let newer = require('gulp-newer');
-
+let babel = require('gulp-babel');
 let webp = require('imagemin-webp');
 let webpcss = require("gulp-webp-css");
 let webphtml = require('gulp-webp-html');
@@ -94,6 +94,9 @@ function css() {
 function js() {
 	return src(path.src.js, {})
 		.pipe(fileinclude())
+		.pipe(babel({
+			presets: ['@babel/env'],
+        }))
 		.pipe(gulp.dest(path.build.js))
 		.pipe(uglify(/* options */))
 		.pipe(
@@ -133,6 +136,24 @@ function images() {
 		)
 		.pipe(dest(path.build.images))
 }
+
+gulp.task('babel', () =>
+    gulp.src(path.src.js)
+		.pipe(fileinclude())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+		.pipe(gulp.dest(path.build.js))
+		.pipe(uglify(/* options */))
+		.pipe(
+			rename({
+				suffix: ".min",
+				extname: ".js"
+			})
+		)
+		.pipe(dest(path.build.js))
+);
+
 gulp.task('importImg', function () {
 	return src(path.src.images)
 		.pipe(dest(path.build.images))

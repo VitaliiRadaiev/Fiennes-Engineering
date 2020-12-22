@@ -748,6 +748,27 @@
 
 // == video block ======================================================================
 .video-block {
+	&.objectFitVideoPoly {
+		object-fit: cover;
+		font-family: 'object-fit: cover;';
+	}
+
+	&-2 {
+		margin: 17rem 0 17rem;
+
+		@media (max-width: $md3+px) {
+			margin: 14rem 0 14rem;
+		}
+
+		@media (max-width: $md4+px) {
+			margin: 10rem 0 10rem;
+		}
+
+		& .icon-play3:after {
+			display: none;
+		}
+	}
+
 	&__body {
 		position: relative;
 		height: 80vh;
