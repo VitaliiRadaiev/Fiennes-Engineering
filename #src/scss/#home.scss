@@ -756,6 +756,24 @@
 	&-2 {
 		margin: 17rem 0 17rem;
 
+		& .container.container_large-1400 {
+			max-width: 147rem;
+		}
+
+		& .text-block {
+			margin-bottom: 3rem;
+
+			& .text-block__body {
+				&:before {
+					height: 100%;
+				}
+			}
+		}
+
+		& .video-block__body {
+			background-color: #d0d0d0;
+		}
+
 		@media (max-width: $md3+px) {
 			margin: 14rem 0 14rem;
 		}

@@ -4217,6 +4217,22 @@ textarea.input {
   margin: 17rem 0 17rem;
 }
 
+.video-block-2 .container.container_large-1400 {
+  max-width: 147rem;
+}
+
+.video-block-2 .text-block {
+  margin-bottom: 3rem;
+}
+
+.video-block-2 .text-block .text-block__body:before {
+  height: 100%;
+}
+
+.video-block-2 .video-block__body {
+  background-color: #d0d0d0;
+}
+
 .video-block-2 .icon-play3:after {
   display: none;
 }
