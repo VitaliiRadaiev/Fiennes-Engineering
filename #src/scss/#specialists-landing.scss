@@ -13,11 +13,18 @@
 		}
 	}
 
+	& .video-text-block {
+        & .video-text-block__inner {
+            min-height: 260px;
+            padding-bottom: 1px;
+        }
+    }
+
 	&__text-block {
-		margin: 15.3rem 0 15.3rem;
+		margin: 7.65rem 0 7.65rem;
 
 		@media (max-width: $md3+px) {
-			margin: 10rem 0 10rem;
+			margin: 6rem 0 6rem;
 		}
 
 		@media (max-width: $md4+px) {

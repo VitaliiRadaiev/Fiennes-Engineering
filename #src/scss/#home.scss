@@ -4,25 +4,25 @@
 	}
 
 	&__text-block {
-		margin: 15.3rem 0 15.3rem;
+		margin: 7.65rem 0 7.65rem;
 
 		@media (max-width: $md3+px) {
-			margin: 10rem 0 10rem;
+			margin: 4rem 0 6rem;
 		}
 
 		@media (max-width: $md4+px) {
-			margin: 5rem 0 5rem;
+			margin: 4rem 0 5rem;
 		}
 	}
 
 
 	& .marques__services {
-		padding: 74px 0 74px;
+		padding: 30px 0 30px;
 		background-color: #e2e2e2;
 		background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, #ffffff 100%);
 		
 		@media (max-width: 1024px) {
-			padding-top: 0;
+			padding-top: 4rem;
 		}
 
 		& .services-block {
@@ -43,7 +43,11 @@
 			}
 
 			&:last-child {
-				margin-bottom: 16rem;
+				margin-bottom: 8rem;
+
+				@media (max-width: $md3+px) {
+					margin-bottom: 0;
+				}
 			}
 
 			&:nth-child(odd) {
@@ -62,7 +66,8 @@
 					}
 
 					@media (max-width: 1024px) {
-						padding-left: 0px;
+						padding-left: 0px !important;
+						padding-right: 0px !important;
 						&:before {
 							display: none;
 						}
@@ -87,7 +92,8 @@
 					}
 
 					@media (max-width: 1024px) {
-						padding-right: 0px;
+						padding-right: 0px !important;
+						padding-left: 0px !important;
 						&:before {
 							display: none;
 						}
@@ -115,14 +121,22 @@
 	}
 
 	&__slider {
+		padding: 0 3rem;
 
+		margin: 0 auto 8rem;
+
+		max-width: 140.8rem;
+
+		@media (max-width: $md3+px) {
+			padding: 0 1.5rem;
+		}
 	}
 
 	&__text-block-2 {
-		margin: 13.3rem 0 20.3rem;
+		margin: 6.6rem 0 10rem;
 
 		@media (max-width: $md3+px) {
-			margin: 12rem 0 12rem;
+			margin: 6rem 0 6rem;
 		}
 
 		@media (max-width: $md4+px) {
@@ -131,10 +145,10 @@
 	}
 
 	&__video {
-		margin: 7rem 0 15.6rem;
+		margin: 7rem 0 6.6rem;
 
 		@media (max-width: $md3+px) {
-			margin: 7rem 0 12rem;
+			margin: 7rem 0 6rem;
 		}
 
 		@media (max-width: $md4+px) {
@@ -143,7 +157,7 @@
 	}
 
 	&__slider-2 {
-		margin: 7rem auto;
+		margin: 6.6rem auto;
 
 		padding: 0 0;
 
@@ -154,14 +168,14 @@
 	}
 
 	&__text-block-3 {
-		margin: 13.3rem 0 20.3rem;
+		margin: 6.6rem 0 10rem;
 
 		@media (max-width: $md3+px) {
-			margin: 12rem 0 12rem;
+			margin: 6rem 0 6rem;
 		}
 
 		@media (max-width: $md4+px) {
-			margin: 7rem 0 7rem;
+			margin: 5rem 0 5rem;
 		}
 	}
 
@@ -216,11 +230,7 @@
 
 
 	&__journal {
-		margin: 15.5rem 0 15.5rem;
-
-		@media (max-width: 1440px) {
-			margin: 12rem 0 12rem;
-		}
+		margin: 6.6rem 0 6.6rem;
 
 		@media (max-width: $md3+px) {
 			padding: 0 1.5rem;
@@ -496,6 +506,7 @@
 // == slider ======================================================================
 
 .slider {
+
 	&__img {
 		height: 80vh;
 		min-height: 48rem;
@@ -506,9 +517,34 @@
 		}
 	}
 
+	&__text {
+		padding: 2rem 0;
+		max-width: 80rem;
+		font-family: $mainFontFamily;;
+		opacity: 0;
+		font-size: 1.5rem;
+		line-height: 2.3rem;
+		letter-spacing: 0.3rem;
+		transition: all .2s ease;
+
+		& > h3 {
+			color: #231f20;
+			font-family: $mainFontFamily;
+			font-size: 1.3rem;
+			font-weight: 700;
+			letter-spacing: 0.142em;
+			line-height: 1.8rem;
+			display: inline;
+		}
+	}
+
 	& .swiper-slide {
 		cursor: grab;
-
+		&.swiper-slide-active {
+			& .slider__text {
+				opacity: 1;
+			}
+		}
 	}
 
 
@@ -754,7 +790,7 @@
 	}
 
 	&-2 {
-		margin: 17rem 0 17rem;
+		margin: 0rem 0 8rem;
 
 		& .container.container_large-1400 {
 			max-width: 147rem;
@@ -853,7 +889,7 @@
 
 // == slider-2 ======================================================================
 .slider-2 {
-
+	margin-bottom: 8rem;
 	text-align: center;
 	@media (max-width: $md3+px) {
 		//margin-left: 5vw;
@@ -1063,6 +1099,34 @@
 		width: 100%;
 		height: 100%;
 		z-index: 1;
+
+		& .swiper-container  {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		& .swiper-slide {
+			position: relative;
+		}
+
+		& .slider__img  {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			
+		}
+
+		& .slider__img {
+			min-height: 80vh;
+			@media (max-width: $md3+px) {
+				min-height: 60vh;
+			}
+		}
 
 		&:before {
 			position: absolute;

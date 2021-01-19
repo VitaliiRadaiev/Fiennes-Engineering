@@ -265,19 +265,19 @@ a {
 	font-size: 3.1rem;
 	font-weight: 700;
 	letter-spacing: 0.142em;
-	line-height: 4.6rem;
+	line-height: 4rem !important;
 	text-transform: uppercase;
 
 	@media (max-width: $md3+px) {
 		font-size: 2.5rem;
 		letter-spacing: 0.142em;
-		line-height: 4rem;
+		line-height: 3rem !important;
 	}
 
 	@media (max-width: $md4+px) {
 		font-size: 2rem;
 		letter-spacing: 0.142em;
-		line-height: 3rem;
+		line-height: 2.5rem !important;
 	}
 }
 .suptitle {
@@ -394,7 +394,7 @@ a {
 
 			& .text-block__title {
 				letter-spacing: 0.7rem;
-				line-height: 5rem;
+				line-height: 4rem;
 				margin-bottom: 4rem;
 
 				max-width: 45rem ;
@@ -436,7 +436,7 @@ a {
 			& .text-block__title {
 				max-width: 67rem;
 				letter-spacing: 0.7rem;
-				line-height: 5rem;
+				line-height: 4rem;
 				margin-bottom: 4rem;
 
 
@@ -706,7 +706,7 @@ a {
 .column {
 	width: 33.3333%;
 	padding: 0 2rem;
-	margin-bottom: 7.5rem;
+	margin-bottom: 6.5rem;
 
 	@media (max-width: 1440px) {
 		padding: 0 2rem;
@@ -1091,6 +1091,16 @@ a {
 
 // === one-img-block ========================================================================
 .one-img-block {
+	margin: 13.3rem 0 13.3rem;
+
+	@media (max-width: $md3+px) {
+		margin: 12rem 0 12rem;
+	}
+
+	@media (max-width: $md4+px) {
+		margin: 5rem 0 5rem;
+	}
+	
 	& img {
 		width: 100%;
 	}
@@ -1296,6 +1306,10 @@ a {
 
 		@media (max-width: $md3+px) {
 			height: 60vh;
+		}
+
+		& .video-text-block__subtitle {
+			margin: 10px auto 40px;
 		}
 	}
 	&__img {
@@ -1566,6 +1580,10 @@ a {
 
 	&__body {
 		position: relative;
+
+		& .video-text-block__subtitle {
+			margin: 10px auto 40px;
+		}
 	}
 	&__img {
 		position: absolute;
@@ -1630,13 +1648,13 @@ a {
 		line-height: 5.5rem;
 		text-transform: uppercase;
 		max-width: 1185px;
-		margin: 0 auto 0;
+		margin: 0 auto 7rem;
 		word-spacing: 0.4em;
 
 		@media (max-width: $md3+px) {
 			font-size: 3.6rem;
 			line-height: 4.4rem;
-			margin-bottom: 3rem;
+			margin-bottom: 5rem;
 		}
 
 		@media (max-width: $md4+px) {

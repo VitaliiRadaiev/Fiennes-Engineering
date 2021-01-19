@@ -77,6 +77,14 @@
 	let slider = document.querySelectorAll('.slider');
 	if(slider.length>0) {
 		slider.forEach(item => {
+
+			if(item.classList.contains('text')) {
+				let pagin = item.querySelector('.swiper-pagination');
+				let height = item.querySelector('.slider__text').clientHeight;
+
+				pagin.style.bottom = height + 40 + 'px';
+			}
+
 			var mySwiper = new Swiper(item.querySelector('.swiper-container'), {
 			slidesPerView:1,
 			effect: 'fade',
@@ -117,6 +125,7 @@
 			})
 		})
 	}
+	
 }
 // == and  slider ==========================================================================
 

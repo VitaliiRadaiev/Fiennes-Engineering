@@ -740,6 +740,19 @@ $(document).ready(function () {
   // === HEADER ==================================================================
 
   {
+    var mobileTopBtn = document.querySelector('.header__mobile-btn');
+
+    if (mobileTopBtn) {
+      mobileTopBtn.addEventListener('click', function () {
+        if (document.documentElement.clientWidth < 768) {
+          this.classList.toggle('_active');
+
+          _slideToggle(this.nextElementSibling);
+        }
+      });
+    }
+  }
+  {
     var btn = document.querySelector('.header__switch-btn');
     {
       if (btn) {
@@ -762,40 +775,64 @@ $(document).ready(function () {
     }
   }
   {
-    var navMenu = document.querySelector('.header__menu-list');
+    (function () {
+      var navMenu = document.querySelector('.header__menu-list');
 
-    if (navMenu) {
-      var addClasses = function addClasses() {
-        if (document.documentElement.clientWidth < 992) {
-          navMenu.classList.add('_spollers', '_one');
-          navMenu.querySelectorAll('.header__menu-list > li > a').forEach(function (link) {
-            console.log(link);
+      if (navMenu) {
+        var _iterator = _createForOfIteratorHelper(navMenu.children),
+            _step;
 
-            if (link.nextElementSibling) {
-              link.classList.add('_spoller');
-            }
-          });
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var item = _step.value;
+            var link = item.querySelector('a');
+            link.addEventListener('click', function (e) {
+              if (document.documentElement.clientWidth < 992) {
+                console.log(this.nextElementSibling);
+
+                if (this.nextElementSibling) {
+                  if (!this.classList.contains('_active')) {
+                    e.preventDefault();
+                    this.classList.toggle('_active');
+
+                    _slideToggle(this.nextElementSibling);
+                  }
+                }
+
+                var _iterator2 = _createForOfIteratorHelper(navMenu.children),
+                    _step2;
+
+                try {
+                  for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                    var i = _step2.value;
+
+                    var _link = i.querySelector('a');
+
+                    if (_link == this) {
+                      continue;
+                    }
+
+                    if (_link.nextElementSibling) {
+                      _link.classList.remove('_active');
+
+                      _slideUp(_link.nextElementSibling);
+                    }
+                  }
+                } catch (err) {
+                  _iterator2.e(err);
+                } finally {
+                  _iterator2.f();
+                }
+              }
+            });
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
         }
-      };
-
-      var removeClasses = function removeClasses() {
-        navMenu.classList.remove('_spollers', '_one');
-        navMenu.querySelectorAll('.header__menu-link').forEach(function (link) {
-          link.classList.remove('_spoller');
-        });
-      };
-
-      addClasses();
-      spollerInit();
-      window.addEventListener('resize', function () {
-        if (document.documentElement.clientWidth < 992) {
-          addClasses();
-          spollerInit();
-        } else {
-          removeClasses();
-        }
-      });
-    }
+      }
+    })();
   }
   ; // === // HEADER ==================================================================
   // === HOME ==================================================================
@@ -874,6 +911,12 @@ $(document).ready(function () {
 
     if (_slider2.length > 0) {
       _slider2.forEach(function (item) {
+        if (item.classList.contains('text')) {
+          var pagin = item.querySelector('.swiper-pagination');
+          var height = item.querySelector('.slider__text').clientHeight;
+          pagin.style.bottom = height + 40 + 'px';
+        }
+
         var mySwiper = new Swiper(item.querySelector('.swiper-container'), {
           slidesPerView: 1,
           effect: 'fade',
@@ -1023,18 +1066,18 @@ $(document).ready(function () {
           var findHeight = function findHeight(column) {
             var count = 0;
 
-            var _iterator = _createForOfIteratorHelper(column.children),
-                _step;
+            var _iterator3 = _createForOfIteratorHelper(column.children),
+                _step3;
 
             try {
-              for (_iterator.s(); !(_step = _iterator.n()).done;) {
-                var el = _step.value;
+              for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                var el = _step3.value;
                 count += el.scrollHeight;
               }
             } catch (err) {
-              _iterator.e(err);
+              _iterator3.e(err);
             } finally {
-              _iterator.f();
+              _iterator3.f();
             }
 
             return count;
@@ -1264,18 +1307,18 @@ $(document).ready(function () {
         var children = item.querySelector('.container_small').children;
         var delay = -0.5;
 
-        var _iterator2 = _createForOfIteratorHelper(children),
-            _step2;
+        var _iterator4 = _createForOfIteratorHelper(children),
+            _step4;
 
         try {
-          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-            var el = _step2.value;
+          for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+            var el = _step4.value;
             el.style.transitionDelay = (delay += 0.5) + 's';
           }
         } catch (err) {
-          _iterator2.e(err);
+          _iterator4.e(err);
         } finally {
-          _iterator2.f();
+          _iterator4.f();
         }
       });
     }

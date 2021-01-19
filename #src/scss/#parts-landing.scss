@@ -18,10 +18,10 @@
     }
 
 	&__text-block {
-		margin: 15.3rem 0 15.3rem;
+		margin: 7.65rem 0 7.65rem;
 
 		@media (max-width: $md3+px) {
-			margin: 10rem 0 10rem;
+			margin: 6rem 0 6rem;
 		}
 
 		@media (max-width: $md4+px) {
@@ -38,10 +38,7 @@
     }
     
     &__list {
-        margin-bottom: 15rem;
-        @media (max-width: $md3+px) {
-            margin-bottom: 7rem;
-        }
+
         & .block-columns-2 {
             justify-content: space-between;
             & .column {
@@ -63,7 +60,7 @@
 
         & .block-columns-3 {
             justify-content: flex-start;
-            margin: 0 -4rem;
+            margin: 0 -2rem;
 
             @media (max-width: 1260px) {
                 margin: 0 -2rem;
@@ -74,16 +71,18 @@
             }
 
             & .column {
-               padding: 0 4rem;
-                margin-bottom: 12.5rem;
+               padding: 0 2rem;
+                flex: 0 1 25%;
+            
+
                 @media (max-width: 1260px) {
                     padding: 0 2rem;
+                    flex: 0 1 33.3333%;
                 }
 
                 @media (max-width: $md3+px) {
                     flex: 0 1 50%;
                     padding: 0 1.5rem;
-                    margin-bottom: 7.5rem;
                 }
 
                 @media (max-width: 575+px) {
@@ -93,6 +92,20 @@
             }
             & .card__img  {
                 padding-bottom: 87%;
+                margin-bottom: 1rem;
+            }
+
+            & .card__text-wrap {
+                padding: 2rem 3rem;
+            }
+
+            & .card__title {
+                font-size: 2.6rem;
+                line-height: 1.29em !important;
+            }
+
+            .card__btn-wrap {
+                margin-top: 3.3rem;
             }
         }
     }
